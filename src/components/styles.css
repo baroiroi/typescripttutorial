@@ -66,3 +66,9 @@
   border: none;
   font-size: 20px;
 }
+
+.icon {
+  margin-left: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}

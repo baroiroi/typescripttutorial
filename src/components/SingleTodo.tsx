@@ -17,13 +17,13 @@ const SingleTodo = ({todo, todos, setTodos}: Props) => {
     <form className="todos_single">
       <span className="todosText">{todo.todo}</span>
       <div>
-        <span className="icon1">
+        <span className="icon">
           <CiEdit />
         </span>
-        <span className="icon2">
+        <span className="icon">
           <AiFillDelete />
         </span>
-        <span className="icon3">
+        <span className="icon">
           <MdFileDownloadDone />
         </span>
       </div>
