@@ -14,7 +14,7 @@ type Props = {
 
 const SingleTodo = ({todo, todos, setTodos}: Props) => {
   return (
-    <form className='todos_single'>
+    <form className="todos_single">
       <span className="todosText">{todo.todo}</span>
       <div>
         <span className="icon1">
