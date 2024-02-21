@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './styles.css';
 import { Todo } from '../model';
 import { CiEdit } from "react-icons/ci"
@@ -20,12 +20,29 @@ const SingleTodo = ({todo, todos, setTodos}: Props) => {
   const handleDelete = (id:number) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   }
+
+  const handleEdit = (e:React.FormEvent,id:number) => {
+    e.preventDefault();
+
+    setTodos(todos.map((todo) => (todo.id === id?{...todo, todo:editTodo}:todo)));
+    setEdit(false);
+  }
+
+  const inputRef = useRef<HTMLInputElement>(null);
+  
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, [edit]);
+
   return (
-    <form className="todos_single">
+    <form className="todos_single" onSubmit = {(e) => handleEdit(e,todo.id)}>
       {
-        
-        edit? (
-          <input />
+        edit ? (
+          <input
+          ref={inputRef}           
+          value={editTodo}
+          onChange = {(e) => setEditTodo(e.target.value)}
+          className='todosText'/>
         ) :
       todo.isDone ?
       (<s className="todosText">{todo.todo}</s> ): (<span className="todosText">{todo.todo}</span>)

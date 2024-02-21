@@ -67,6 +67,10 @@
   font-size: 20px;
 }
 
+.todosText:focus {
+  outline: none;
+}
+
 .icon {
   margin-left: 10px;
   font-size: 25px;
