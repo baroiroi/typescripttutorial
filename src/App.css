@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
 
 .App {
-  width: 10ovw;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
